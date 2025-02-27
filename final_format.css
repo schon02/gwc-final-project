@@ -1,0 +1,449 @@
+/*notes:
+  padding: top right bottom left;
+  padding: top/bottom right/left;
+*/
+
+body {
+  margin: 0;
+  padding:0;
+}
+
+.grid { /*mobile version*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "toplogo toplogo"
+  "navbar navbar"
+  "content content"
+  "footer footer";
+  grid-gap: 10px;
+}
+
+.grid_thriftflips { /*mobile version*/
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "toplogo toplogo"
+  "navbar navbar"
+  "sidebar sidebar"
+  "content content"
+  "footer footer";
+  grid-gap: 10px;
+}
+
+.toplogo {
+  grid-area: toplogo;
+}
+.navbar {
+  grid-area: navbar;
+}
+.sidebar {
+  grid-area: sidebar;
+  display: grid;
+}
+.content {
+  grid-area: content;
+}
+.footer {
+  grid-area: footer;
+}
+
+.navOpacity {
+    /*opacity: .8;*/
+}
+
+nav {
+  /*position: fixed;*/
+  width: 100%
+  height: 64px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  transition: .3s;
+  white-space: nowrap;
+  overflow:hidden;
+  text-align: center;
+  text-decoration:none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  background-color: #9DE8D2;
+}
+
+.nav-placeholder {
+  margin: 0px 0 0px 0px; /*originally 0 0 -64px 0*/
+}
+
+.fixed {
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFF69E;
+  box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+  /*opacity: .95;*/
+}
+
+nav .logo {
+  float: left;
+  padding: 10px 0 5px 0;
+  transition: .3s;
+}
+
+nav ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+  display:flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  display:block;
+  line-height: 40px;
+  color: #1E1E1E;
+  padding: 12px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+nav ul li ul {
+  display: block;
+  min-width:150px;
+  position: absolute;
+
+  /*box-shadow: 0 2px 5px rgba(0,0,0,.5);*/
+  transition: .3s;
+  background-color: white;
+  /*opacity: inherit;*/
+  /*margin-top: 10.3px;*/
+}
+
+nav ul li a:hover {
+  background-color: #4DCCFF;
+  border-radius: 1px; /*making larger will round edges*/
+  /*opacity: inherit;*/
+}
+
+nav ul li ul li {
+  display: none;
+}
+
+nav ul li ul li a {
+  padding: 5px;
+  line-height: 30px;
+  text-align: left;
+}
+
+nav ul li:hover ul li {
+  display:block;
+  /*opacity: inherit;*/
+}
+
+nav ul li ul li a:hover {
+    background-color: #f3f3f3;
+    /*opacity: inherit;*/
+}
+
+.sidebarProperties {
+  width: 200px;
+  height: 300px;
+  left: 10px;
+  padding: 10px 0 0 0px;
+  margin-left: 20px;
+  margin-top: 80px;
+  box-sizing: border-box;
+  /*transition: .3s;*/
+  /*white-space: nowrap;*/
+  /*overflow:hidden;*/
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  background-color: #C8E897;
+}
+
+.sidebarProperties ul li {
+    align-items: flex-start;
+    list-style: none;
+}
+
+.sidebarProperties a {
+  line-height: 60px;
+  padding: 12px 60px 12px 12px;
+  color: #1E1E1E;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.sidebarProperties a:hover {
+  background-color: #9DE8D2;
+  border-radius: 1px; /*making larger will round edges*/
+}
+
+.sidebarProperties-placeholder {
+  margin: 0px 0px 0px 0px; /*originally 0 0 10px 0*/
+}
+
+.fixedSidebar {
+  /*overflow: visible;*/
+  position: fixed;
+  top: 100px; /*distance between stickynav and stickyside*/
+  /*left: 10px;*/
+  width: 200px;;
+  background-color: #C8E897;
+  /*box-shadow:0 2px 5px 0 rgba(0,0,0,0.2),0 4px 10px 0 rgba(0,0,0,0.19);*/
+  /*opacity: .95;*/
+  box-sizing: border-box;
+  text-align: left;
+  left: 10px;
+  padding: 10px 0 0 0px;
+  margin-left: 10px;
+}
+
+.actualContent {
+  margin-top: 80px;
+}
+
+.actualContent p {
+  width: 800px;
+  margin: 30px auto;
+  text-align: justify;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.thriftflipsinfo {
+  margin-top: 80px;
+}
+
+.thriftflipsinfo p {
+  width: 800px;
+  margin: 30px auto 30px 0px;
+  text-align: justify;
+  font-size: 20px;
+  line-height: 30px;
+
+}
+
+body {
+  margin: 0;
+  padding:0;
+  /*font-family: Kanit;*/
+}
+
+.shadow{
+  box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+}
+
+h4 { /* for blue and white title*/
+  font-family: 'Amatic SC', cursive;
+  text-transform: uppercase;
+  font-size: 100px;
+  text-align: center;
+  background-color: #9DE8D2;
+  border-radius: 20px; /*making larger will round edges*/
+  width: 600px;
+}
+
+.actualContent h2 {
+  font-family: 'Sawarabi Mincho', sans-serif;
+  text-align: left;
+  font-size: 60px;
+  margin: 0 0 20px 0;
+}
+
+.thriftflipsinfo h2 {
+  font-family: 'Sawarabi Mincho', sans-serif;
+  text-align: left;
+  font-size: 60px;
+  margin: 0 0 20px 0;
+}
+
+.amber h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  padding: 50px 10px 0px 10px;
+  text-align: center;
+}
+
+.amber h2 {
+  font-family: 'Shadows Into Light', cursive;
+  text-align: center;
+  font-size: 100px;
+  margin: 0 0 20px 0;
+}
+
+.amber p {
+  width: 900px;
+  margin: 30px auto;
+  text-align: justify;
+  font-size: 20px;
+  line-height: 30px;
+
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+.footerProperties {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: #ADFFB6;
+  text-align: right;
+  padding: 10px 100px;
+  margin: 100px 0 20px 0;
+}
+
+.shadow{
+  box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)
+}
+
+/*.formatCloset{
+  margin-left: auto;
+   margin-right: auto;
+   width: 5em;
+}
+html,body {
+	margin: 0;
+	padding: 0;
+}
+.slider {
+	width: 100%;
+  heigh: 100%;
+  margin-top: 100px;
+}
+.slider-wrapper {
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+.slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 3s linear;
+}
+.slider-wrapper > .slide:first-child {
+	opacity: 1;
+}
+.canvas{
+  float:left;
+}*/
+
+section.sec1 {
+  width: 100%;
+  height: 70vh;
+  background-image: url('images/minimalist-closet2.jpg');
+  background-size:cover;
+  background-position:center;
+  border-radius: 0px;
+}
+
+section.sec2 { /*image header for thrift flips page */
+  width: 900px;
+  height: 60vh;
+  background-image: url('images/thrift-flips-101.jpg');
+  background-size:cover;
+  background-position:center;
+  border-radius: 0px;
+}
+
+section.sec3 { /*image header for about us page */
+  width: 900px;
+  height: 60vh;
+  background-image: url('images/about_us.jpg');
+  background-size:cover;
+  background-position:center;
+  border-radius: 0px;
+}
+
+
+#border {
+    border: 2px solid black;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    text-align: center;
+}
+
+.videowrapper {
+  display:block;
+  /*padding-bottom: 56.25%;
+  padding-top: 25px;*/
+  padding-bottom: 200px;
+  padding-top: 50px;
+  height: 0px;
+}
+
+.videowrapper iframe {
+}
+
+.image_grid {
+  margin: 10px 10px 10px 10px;
+}
+.image_grid img {
+  height: 400px;
+  width: 270px;
+  padding: 10px 10px 10px 10px;
+}
+
+
+.image_grid2 {
+  margin-top: 10px;
+}
+.image_grid2 img { /* grid at bottom of generator page*/
+  height: 150px;
+  padding: 10px 10px 10px 10px;
+}
+
+@media screen and (min-width: 736px) /*desktop version*/
+{
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 300px 300px 300px 300px 1fr;
+    grid-template-areas:
+    ". toplogo toplogo toplogo toplogo ."
+    "navbar navbar navbar navbar navbar navbar"
+    ". content content content content ."
+    "footer footer footer footer footer footer";
+      grid-gap: 10px;
+  }
+}
+
+
+@media screen and (min-width: 736px) /*desktop version FOR THRIFT FLIPS PAGE*/
+{
+  .grid_thriftflips {
+    display: grid;
+    grid-template-columns: 1fr 300px 300px 300px 300px 1fr;
+    grid-template-areas:
+    ". toplogo toplogo toplogo toplogo ."
+    "navbar navbar navbar navbar navbar navbar"
+    "sidebar sidebar content content content ."
+    "footer footer footer footer footer footer";
+    grid-gap: 10px;
+  }
+}
